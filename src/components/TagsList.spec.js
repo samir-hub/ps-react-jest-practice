@@ -8,8 +8,6 @@ describe("The tags list", () => {
       .create(<TagsList tags={["css", "html", "go"]} />)
       .toJSON();
 
-      console.log(tree);
-
-      //expect(tree).toMatchSnapshot(); 
+      expect(tree).toMatchSnapshot(); 
   });
 });
