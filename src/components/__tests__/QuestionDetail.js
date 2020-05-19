@@ -32,7 +32,7 @@ describe('The Question Detail Component', () => {
         const tree = renderer.create(
             <QuestionDetailDisplay
                 title="The meaning of life"
-                body="42"
+                body="43"
                 answer_count={0}
                 tags={['hitchhiking']}
             />
