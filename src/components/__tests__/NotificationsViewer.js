@@ -22,6 +22,6 @@ describe("The notification viewer", () => {
         const component = instance.findByProps({className: 'notifications'})
         const text = component.children[0]
 
-        expect(text).toEqual("5 Notifications Awaiting")
+        expect(text).toEqual("5 Notifications Awaiting!")
     })
 })
