@@ -3,6 +3,8 @@ import renderer from 'react-test-renderer';
 import React from 'react'; 
 import delay from 'redux-saga'; 
 
+jest.mock('../../services/NotificationService');
+
 describe("The notification viewer", () => {
     it("should show the correct number", async() => {
         const tree = renderer
