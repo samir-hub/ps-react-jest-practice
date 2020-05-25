@@ -3,9 +3,14 @@ import renderer from 'react-test-renderer';
 import React from 'react'; 
 import delay from 'redux-saga'; 
 
-jest.mock('../../services/NotificationService');
+jest.mock('../../services/NotificationsService');
+
+const notificationsService = require('../../services/NotificationsService').default
 
 describe("The notification viewer", () => {
+    beforeAll(() => {
+        notificationsService.__setCount(5)
+    })
     it("should show the correct number", async() => {
         const tree = renderer
         .create(
@@ -17,6 +22,6 @@ describe("The notification viewer", () => {
         const component = instance.findByProps({className: 'notifications'})
         const text = component.children[0]
 
-        expect(text).toEqual("5 Notifications")
+        expect(text).toEqual("5 Notifications Awaiting")
     })
 })
