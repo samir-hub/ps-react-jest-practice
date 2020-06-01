@@ -15,6 +15,8 @@ describe("The questions reducer", () => {
         const newState = questions(state, {type: 'FETCHED_QUESTION', question: newQuestion})
 
         console.log(newState)
+        expect(newState).toContain(newQuestion)
+        expect(state).not.toContain(newQuestion)
     })
 
 })
