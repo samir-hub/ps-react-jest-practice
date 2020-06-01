@@ -8,4 +8,13 @@ describe("The questions reducer", () => {
 
         expect(newState).toEqual(state); 
     })
+
+    it("should add new questions", () => {
+        const state = [{question_id: "foo"}, {question_id: "bar"}]
+        const newQuestion = {question_id: "baz"}
+        const newState = questions(state, {type: 'FETCHED_QUESTION', question: newQuestion})
+
+        console.log(newState)
+    })
+
 })
